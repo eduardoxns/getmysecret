@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="imagem/png" href="img/icone.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <title>GetmySecret</title>
+</head>
+
+<body>
+<div class="jumbotron text-center" id="titulo">
+  <h1>GetmySecret</h1>
+  <h5>Seu segredo enviado como um aperto de mãos</h5>
+</div>
+
+<div class="row col-sm-6 offset-sm-3">
+  <div class="input-group mb-3" id="senha_form">
+
+    <div class="card col-sm-6" id="campo">
+      <span id="senha"></span>
+    </div>
+
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="gera_senha">Gerar Senha</button>
+    </div>
+
+  </div>
+
+  <div class="form-group" id="escolha_tempo">
+    <h6 style="font-style: italic; margin-bottom: 2%;">Por quanto tempo deseja que a informação esteja visível?</h6>
+    <div class="form-check-inline">
+      <input class="form-check-input" type="radio" name="tempo" id="30seg" checked>
+      <label class="form-check-label" for="30seg">30 segundos</label>
+    </div>
+    <div class="form-check-inline">
+      <input class="form-check-input" type="radio" name="tempo" id="1min">
+      <label class="form-check-label" for="1min">1 minuto</label>
+    </div>
+    <div class="form-check-inline">
+      <input class="form-check-input" type="radio" name="tempo" id="5min">
+      <label class="form-check-label" for="5min">5 minutos</label>
+    </div>
+    <div class="form-check-inline">
+      <input class="form-check-input" type="radio" name="tempo" id="1hr">
+      <label class="form-check-label" for="1hr">1 hora</label>
+    </div>
+    <div class="form-check-inline">
+      <input class="form-check-input" type="radio" name="tempo" id="1dia">
+      <label class="form-check-label" for="1dia">1 dia</label>
+    </div>
+    <div class="form-check-inline">
+      <input class="form-check-input" type="radio" name="tempo" id="7dias">
+      <label class="form-check-label" for="7dias">7 dias</label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" style="background-color: #0897E9;">Criar link</button>
+</div>
+
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

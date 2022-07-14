@@ -1,0 +1,43 @@
+body
+{
+  background-color: #F5F5F5;
+}
+
+#titulo
+{
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-style: italic;
+  color: #363636;
+}
+
+#senha_form
+{
+  margin-top: 2%;
+}
+
+#campo
+{
+  width: 75%;
+}
+
+#senha
+{
+text-align: center;
+font-style: bold;
+font-size: 120%;
+color: #363636;
+}
+
+#gera_senha
+{
+width: 120%;
+height: 100%;
+background-color: #0897E9;
+color: white;
+}
+
+#escolha_tempo
+{
+  margin-bottom: 2%;
+}
