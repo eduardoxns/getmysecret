@@ -1,43 +1,78 @@
-body
-{
-  background-color: #F5F5F5;
+nav {
+  height: 50px;
 }
 
-#titulo
-{
+#logo {
+  font-weight: 500;
+  font-size: 150%;
+  margin-left: -10%;
+  margin-top: -5px;
+}
+
+#titulo {
+  font-weight: bolder;
   margin-top: 5%;
   margin-bottom: 2%;
   font-style: italic;
-  color: #363636;
+  color: #212529;
 }
 
-#senha_form
-{
+#formulario {
   margin-top: 2%;
 }
 
-#campo
-{
+#campo {
   width: 75%;
+  background-color: rgba(54, 54, 54, 0.1);
 }
 
-#senha
-{
-text-align: center;
-font-style: bold;
-font-size: 120%;
-color: #363636;
+#senha {
+  text-align: center;
+  font-style: bold;
+  font-size: 120%;
 }
 
-#gera_senha
-{
-width: 120%;
-height: 100%;
-background-color: #0897E9;
-color: white;
+#gera_senha {
+  width: 120%;
+  height: 100%;
+  background-color: #212529;
+  color: white;
 }
 
-#escolha_tempo
-{
-  margin-bottom: 2%;
+#escolha_tempo {
+  margin-bottom: 3%;
+  background-color: rgba(54, 54, 54, 0.1);
+}
+
+#submit {
+  background-color: #212529;
+  border: none;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+#campo_link {
+  width: 100%;
+  height: 110%;
+  background-color: rgba(0, 128, 0, 0.1);
+  text-align: center;
+}
+
+#link {
+  margin-top: 1%;
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+footer {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  background-color: #212529;
+  color: white;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
 }
