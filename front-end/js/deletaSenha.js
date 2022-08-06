@@ -1,9 +1,9 @@
 
 /* ---------- DELETA SENHA DO BANCO ---------- */
 
-function deletaSenha()  //Cria uma função para deletar o segredo
+function deletaSenha()
 {
-  Swal.fire({           //Dispara um alerta para confirmar se o usuario realmente deseja apagar o segredo
+  Swal.fire({
     icon: 'warning',
     title: 'Deseja excluir seu segredo?',
     text: "Não será possível reverter!",
@@ -15,26 +15,29 @@ function deletaSenha()  //Cria uma função para deletar o segredo
     iconColor: '#F19F01'
   })
   .then((result) => {
-    if (result.isConfirmed) //Se a resposta do alerta for "SIM"
+    if (result.isConfirmed)
     {
-      fetch('https://131wfoo2w3.execute-api.us-east-1.amazonaws.com/deletaSenha_V1/', {   //Executa a função delete na API via Fetch
+      let url = window.location.href;
+      url_id = url.substring(url.indexOf("?") + 1);
+
+      fetch('https://131wfoo2w3.execute-api.us-east-1.amazonaws.com/deletaSenha_V1/', {
         method: "DELETE",
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({"senha": document.getElementById('info').innerHTML})        //Envia o segredo exibido na tela para a API
+        body: JSON.stringify({"id_senha": url_id})
       })
-      Swal.fire({   //Dispara um alerta dizendo que o segredo foi excluído
+      Swal.fire({
         icon: 'success',
         title: 'Excluído!',
         text: 'Seu segredo foi excluído',
         confirmButtonColor: '#0897E9',
       })
-      .then(function(){                 //Após o usuario clicar em "OK"
-        window.location = 'index.html'  //O usuario é redirecionado para a pagina inicial
+      .then(function()  {
+        window.location = 'index.html'
       })
     }
-    else if (result.dismiss === Swal.DismissReason.cancel)  //Porém, se a resposta para o alerta for "NÃO"
+    else if (result.dismiss === Swal.DismissReason.cancel)
     {
-      Swal.fire({ //É disparado um alerta dizendo que o segredo continua no banco
+      Swal.fire({
         icon: 'error',
         title: 'Cancelado',
         text: 'Seu segredo continua seguro!',

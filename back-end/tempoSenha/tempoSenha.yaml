@@ -12,11 +12,6 @@ Resources:
       MemorySize: 128
       Timeout: 3
       Role: 'arn:aws:iam::049747648193:role/service-role/tempoSenha'
-      Events:
-        Schedule1:
-          Type: Schedule
-          Properties:
-            Schedule: rate(1 minute)
       Environment:
         Variables:
           TZ: America/Sao_Paulo

@@ -12,9 +12,3 @@ Resources:
       MemorySize: 128
       Timeout: 3
       Role: 'arn:aws:iam::049747648193:role/service-role/deletaSenha'
-      Events:
-        Api1:
-          Type: Api
-          Properties:
-            Path: /
-            Method: DELETE

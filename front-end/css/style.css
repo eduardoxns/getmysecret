@@ -68,12 +68,6 @@ body {
   background-color: rgba(8, 151, 233, 0.1);
 }
 
-#link {
-  color: #0000EE;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 #conteudo {
   display: none;
   text-align: center;
