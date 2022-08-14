@@ -10,7 +10,6 @@ var a = document.createElement('a');
 var linkText = document.createTextNode(urlID + '/secret.html?' + ID);
 
 a.appendChild(linkText);
-
 a.href = `secret.html?${ID}`;
 
 document.getElementById('link').appendChild(a);

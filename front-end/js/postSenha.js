@@ -1,4 +1,4 @@
-
+ 
 /* ---------- ENVIA SENHA PARA O BANCO ---------- */
 
 function submit()
@@ -17,7 +17,16 @@ function submit()
   }
   else
   {
-    fetch('https://h91swzx2ab.execute-api.us-east-1.amazonaws.com/gravaSenha_V1/', {
+    Swal.fire({
+      title: 'CARREGANDO...',
+      text: 'Seu link está sendo gerado',
+      allowOutsideClick: false,
+      allowEscapeKey : false,
+      didOpen: () => {
+        Swal.showLoading()
+      }
+    })
+    fetch('https://h91swzx2ab.execute-api.us-east-1.amazonaws.com/postSenha_V1/', {
       method: "POST",
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -25,22 +34,12 @@ function submit()
         "ate_quando": tempo
       })
     })
-    .then(response => {
-      return response.json();
-    })
+    .then(response => response.json())
     .then(senhaID => {
       sessionStorage.setItem('ID', senhaID.body);
     })
-    Swal.fire({
-      icon: 'success',
-      title: 'Seu link foi gerado!',
-      text: 'Aguarde enquanto te redirecionamos...',
-      showConfirmButton: false,
-      timerProgressBar: true,
-      timer: 3000
-      })
-      .then(function()  {
-        window.location = 'private.html';
+    .then(function() {
+      window.location = 'private.html';
     })
   }
 }

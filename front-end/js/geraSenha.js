@@ -2,6 +2,7 @@
 /* ---------- GERAR SENHA SEGURA ---------- */
 
 var senhaEscrita = document.getElementById("senha");
+var campoSenha = document.getElementById("campoSenha");
 var geraSenha = document.getElementById("geraSenha");
 
 var caracteresMaiuscula = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -34,6 +35,7 @@ const efeitoGerarSenha = () => {
 }
 
 geraSenha.onclick = () => {
+    campoSenha.style = "padding: 0%"
     geraSenha.setAttribute("disabled", "true");
     efeitoGerarSenha();
 }
