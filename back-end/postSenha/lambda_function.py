@@ -10,18 +10,22 @@ def lambda_handler(event, context):
 	
 	senhaID = str(uuid4())
 	
-	def calculaTempo():
-		tempo = str(event['ate_quando'])
-		tempo = tempo.split(":")
-		calculo = datetime.now() + timedelta(days=int(tempo[0]), hours=int(tempo[1]), minutes=int(tempo[2]), seconds=int(tempo[3]))
-		return str(calculo.strftime('%d/%m/%Y as %H:%M:%S'))
+	tempo = str(event['ate_quando'])
+	tempo = tempo.split(":")
+	
+	calculo = datetime.now() + timedelta(days=int(tempo[0]), hours=int(tempo[1]), minutes=int(tempo[2]), seconds=int(tempo[3]))
+	
+	tempoLimite = str(calculo.strftime('%d/%m/%Y as %H:%M:%S'))
+	TTL = int(calculo.timestamp())
 	
 	response = table.put_item(
 		Item = {
 			'id_senha': senhaID,
+			'acesso_ip': '-',
 			'criado_em': str(datetime.now().strftime('%d/%m/%Y as %H:%M:%S')),
-			'ate_quando': calculaTempo(),
-			'senha': event['senha']
+			'ate_quando': tempoLimite,
+			'senha': event['senha'],
+			'TTL': TTL
 		}
 	)
 	return {
