@@ -38,9 +38,7 @@ body {
 }
 
 #campoSenha {
-  width: 66.85%;
   display: flex;
-  padding: 14px;
   background-color: rgba(54, 54, 54, 0.1);
 }
 

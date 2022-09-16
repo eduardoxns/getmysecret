@@ -38,8 +38,8 @@ fetch('https://wv911b808b.execute-api.us-east-1.amazonaws.com/getSenha/?id=' + u
   window.location = "error.html";
 });
 
-/* ---------- RECARREGA PÁGINA A CADA 5 MINUTOS ---------- */
+/* ---------- RECARREGA PÁGINA A CADA 1 MINUTO ---------- */
 
 setTimeout(function() {
   location.reload()
-}, 60000 * 5)
+}, 60000 * 1)
